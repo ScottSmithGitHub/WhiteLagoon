@@ -34,10 +34,10 @@ namespace WhiteLagoon.Web.Controllers
 
             if (ModelState.IsValid)
             {
-                //_villaService.CreateVilla(obj);
-                TempData["success"] = "The villa has been created successfully.";
+                //_villaService.CreateVilla(obj);                
                 _db.Villas.Add(obj);
                 _db.SaveChanges();
+                TempData["success"] = "The villa has been created successfully.";
                 return RedirectToAction(nameof(Index));
             }
             return View();
